@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Wszystkie wpisy</h1>
+
+    {% for post in all_posts %}
+    <div class="post">
+        <h2>{{ post.title }}</h2>
+        <p><small>Opublikowano: {{ post.pub_date.strftime('%Y-%m-%d') }}</small></p>
+        <p>{{ post.body }}</p>
+        <hr>
+    </div>
+    {% endfor %}
+
+{% endblock %}
